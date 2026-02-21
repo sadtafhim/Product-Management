@@ -23,7 +23,7 @@ const Register = () => {
                             name="email"
                             required
                             placeholder="Enter your email"
-                            className="input input-bordered w-full p-3 focus:border-[#2563EB] focus:outline-none"
+                            className="input input-bordered w-full p-3 focus:border-[#2563EB] "
                         />
                     </div>
 
@@ -40,7 +40,7 @@ const Register = () => {
                             name="password"
                             required
                             placeholder="Enter your password"
-                            className="input input-bordered w-full p-3 focus:border-[#2563EB] focus:outline-none"
+                            className="input input-bordered w-full p-3 focus:border-[#2563EB] "
                         />
                     </div>
 
@@ -68,7 +68,7 @@ const Register = () => {
 
                 <div className="text-center mt-6">
                     <p className="text-sm text-[#64748B]">
-                        Don't have an account?{" "}
+                        Don't have an account? {" "}
                         <Link
                             to="/auth/login"
                             className="font-semibold text-[#2563EB] hover:text-[#1D4ED8] hover:underline"
