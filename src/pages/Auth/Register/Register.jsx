@@ -1,31 +1,81 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Register = () => {
     return (
-        <div>
-            <div class="flex justify-center">
-                <div class="card w-96 bg-base-100 shadow-xl mt-20 mb-20">
-                    <div class="card-body">
-                        <h2 class="card-title">Register!</h2>
-                        <div class="items-center mt-2">
-                            <label class="input input-bordered flex items-center gap-2 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
-                                    <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-                                    <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-                                </svg>
-                                <input type="text" class="grow" placeholder="Email" />
-                            </label>
-                            <label class="input input-bordered flex items-center gap-2 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
-                                    <path fill-rule="evenodd" d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clip-rule="evenodd" />
-                                </svg>
-                                <input type="password" class="grow" value="password" />
-                            </label>
-                        </div>
-                        <div class="card-actions justify-end">
-                            <button class="btn btn-primary w-full">Login</button>
-                        </div>
+        <div className="flex items-center justify-center p-10 min-h-screen">
+            <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
+                <h2 className="text-3xl font-bold text-center text-[#1E293B]">
+                    Register
+                </h2>
+
+                <form className="space-y-5 mt-6">
+                    <div className="form-control">
+                        <label
+                            htmlFor="email"
+                            className="label font-medium text-[#1E293B]"
+                        >
+                            Email Address
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="Enter your email"
+                            className="input input-bordered w-full p-3 focus:border-[#2563EB] focus:outline-none"
+                        />
                     </div>
+
+                    <div className="form-control">
+                        <label
+                            htmlFor="password"
+                            className="label font-medium text-[#1E293B]"
+                        >
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            placeholder="Enter your password"
+                            className="input input-bordered w-full p-3 focus:border-[#2563EB] focus:outline-none"
+                        />
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="w-full py-3 rounded-full text-white font-semibold bg-[#2563EB] hover:bg-[#1D4ED8] transition-all"
+                    >
+                        Sign In
+                    </button>
+                </form>
+
+                <div className="flex items-center gap-3 my-6">
+                    <div className="grow h-px bg-[#E2E8F0]"></div>
+                    <span className="text-[#64748B] text-sm">OR</span>
+                    <div className="grow h-px bg-[#E2E8F0]"></div>
+                </div>
+
+                <button
+                    className="w-full py-3 rounded-full border border-[#E2E8F0] flex items-center justify-center gap-2 bg-white hover:bg-[#F1F5F9] transition-all"
+                >
+                    <span className="font-medium text-[#1E293B]">
+                        Continue with Google
+                    </span>
+                </button>
+
+                <div className="text-center mt-6">
+                    <p className="text-sm text-[#64748B]">
+                        Don't have an account?{" "}
+                        <Link
+                            to="/auth/login"
+                            className="font-semibold text-[#2563EB] hover:text-[#1D4ED8] hover:underline"
+                        >
+                            Login here
+                        </Link>
+                    </p>
                 </div>
             </div>
         </div>

@@ -3,16 +3,17 @@ import { Link } from 'react-router';
 
 const Login = () => {
     return (
-        <div className="flex items-center justify-center p-10">
-            <div className="w-full max-w-md">
-                <h2 className="text-3xl font-bold text-center">
+        <div className="flex items-center justify-center p-10 min-h-screen">
+            <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
+                <h2 className="text-3xl font-bold text-center text-[#1E293B]">
                     Login
                 </h2>
-                <form className="space-y-5">
+
+                <form className="space-y-5 mt-6">
                     <div className="form-control">
                         <label
                             htmlFor="email"
-                            className="label font-medium"
+                            className="label font-medium text-[#1E293B]"
                         >
                             Email Address
                         </label>
@@ -22,14 +23,14 @@ const Login = () => {
                             name="email"
                             required
                             placeholder="Enter your email"
-                            className="input input-bordered w-full p-3"
+                            className="input input-bordered w-full p-3 focus:border-[#2563EB] focus:outline-none"
                         />
                     </div>
 
                     <div className="form-control">
                         <label
                             htmlFor="password"
-                            className="label font-medium"
+                            className="label font-medium text-[#1E293B]"
                         >
                             Password
                         </label>
@@ -39,38 +40,38 @@ const Login = () => {
                             name="password"
                             required
                             placeholder="Enter your password"
-                            className="input input-bordered w-full p-3"
+                            className="input input-bordered w-full p-3 focus:border-[#2563EB] focus:outline-none"
                         />
                     </div>
 
                     <button
                         type="submit"
-                        className="w-full py-3 rounded-full text-white font-semibold bg-white"
+                        className="w-full py-3 rounded-full text-white font-semibold bg-[#2563EB] hover:bg-[#1D4ED8] transition-all"
                     >
                         Sign In
                     </button>
                 </form>
 
-                <div className="flex items-center gap-3 my-4">
-                    <div className="grow h-px bg-gray-300"></div>
-                    <span className="text-gray-500 text-sm">OR</span>
-                    <div className="grow h-px bg-gray-300"></div>
+                <div className="flex items-center gap-3 my-6">
+                    <div className="grow h-px bg-[#E2E8F0]"></div>
+                    <span className="text-[#64748B] text-sm">OR</span>
+                    <div className="grow h-px bg-[#E2E8F0]"></div>
                 </div>
 
                 <button
-                    className="w-full py-3 rounded-full border border-gray-300 flex items-center justify-center gap-2 bg-white hover:bg-gray-50 transition-all"
+                    className="w-full py-3 rounded-full border border-[#E2E8F0] flex items-center justify-center gap-2 bg-white hover:bg-[#F1F5F9] transition-all"
                 >
-                    <span className="font-medium text-gray-600">
+                    <span className="font-medium text-[#1E293B]">
                         Continue with Google
                     </span>
                 </button>
 
-                <div className="text-center mt-4">
-                    <p className="text-sm text-gray-600">
+                <div className="text-center mt-6">
+                    <p className="text-sm text-[#64748B]">
                         Don't have an account?{" "}
                         <Link
                             to="/auth/register"
-                            className="font-semibold hover:underline"
+                            className="font-semibold text-[#2563EB] hover:text-[#1D4ED8] hover:underline"
                         >
                             Register here
                         </Link>
