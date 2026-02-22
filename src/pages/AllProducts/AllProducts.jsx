@@ -6,7 +6,7 @@ const AllProducts = () => {
     const [editingProduct, setEditingProduct] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/products")
+        fetch("https://product-management-server-ten.vercel.app/api/products")
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -14,15 +14,12 @@ const AllProducts = () => {
             });
     }, []);
 
-    const handleDelete = (id) => {
-        if (!window.confirm("Delete this product?")) return;
-        fetch(`http://localhost:5000/products/${id}`, { method: "DELETE" })
+    const handleDelete = id => {
+        if (!confirm("Delete this product?")) return;
+        fetch(`https://product-management-server-ten.vercel.app/api/products?id=${id}`, { method: "DELETE" })
             .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    setProducts(products.filter(p => p._id !== id));
-                }
-            });
+            .then(data => data.deletedCount > 0 && setProducts(products.filter(p => p._id !== id)))
+            .catch(err => console.error(err));
     };
 
     const handleEditSubmit = (e) => {
@@ -33,7 +30,7 @@ const AllProducts = () => {
             description: e.target.description.value
         };
 
-        fetch(`http://localhost:5000/products/${editingProduct._id}`, {
+        fetch(`https://product-management-server-ten.vercel.app/api/products?id=${editingProduct._id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(updated)

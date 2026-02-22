@@ -9,7 +9,7 @@ const AddProducts = () => {
         const description = e.target.description.value;
         const product_details = { name, quantity, description }
 
-        fetch("http://localhost:5000/products", {
+        fetch("https://product-management-server-ten.vercel.app/api/products", {
             method: 'Post',
             headers: {
                 'content-type': 'application/json'
