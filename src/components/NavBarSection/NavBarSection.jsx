@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router';
 import logo from "../../assets/logo.png"
 
-const NavBar = () => {
+const NavBarSection = () => {
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -34,4 +34,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+export default NavBarSection;

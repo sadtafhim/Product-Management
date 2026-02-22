@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = () => {
+const FooterSection = () => {
     return (
         <div>
             <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
@@ -29,4 +29,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default FooterSection;

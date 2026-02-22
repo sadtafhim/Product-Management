@@ -1,14 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Footer from '../../components/footer/footer';
-import NavBar from '../../components/navbar/navbar';
+import NavBarSection from '../../components/NavBarSection/NavBarSection';
+import FooterSection from '../../components/FooterSection/FooterSection';
+
 
 const AuthLayout = () => {
     return (
         <div>
-            <NavBar></NavBar>
+            <NavBarSection></NavBarSection>
             <Outlet></Outlet>
-            <Footer></Footer>
+            <FooterSection></FooterSection>
         </div>
     );
 };

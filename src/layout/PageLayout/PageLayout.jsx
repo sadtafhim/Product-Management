@@ -1,13 +1,13 @@
 import React from 'react';
-import NavBar from '../../components/navbar/navbar';
 import { Outlet } from 'react-router';
-import Footer from '../../components/footer/footer';
+import NavBarSection from '../../components/NavBarSection/NavBarSection';
+import FooterSection from '../../components/FooterSection/FooterSection';
 const PageLayout = () => {
     return (
         <div>
-            <NavBar></NavBar>
+            <NavBarSection></NavBarSection>
             <Outlet></Outlet>
-            <Footer></Footer>
+            <FooterSection></FooterSection>
         </div>
     );
 };
