@@ -6,12 +6,17 @@ import AllProducts from '../pages/AllProducts/AllProducts';
 import AddProducts from '../pages/AddProducts/AddProducts';
 import Login from '../pages/Auth/Login/Login';
 import Register from '../pages/Auth/Register/Register';
+import LandingPage from '../pages/LandingPage/LandingPage';
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <PageLayout></PageLayout>,
         children: [
+            {
+                path: "/",
+                element: <LandingPage></LandingPage>
+            },
             {
                 path: "/AllProducts",
                 element: <AllProducts></AllProducts>

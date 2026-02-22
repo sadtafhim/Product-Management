@@ -2,6 +2,26 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const AddProducts = () => {
+    const handleSubmit = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const quantity = e.target.quantity.value;
+        const description = e.target.description.value;
+        const product_details = { name, quantity, description }
+
+        fetch("http://localhost:5000/products", {
+            method: 'Post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product_details)
+        }).then(res => res.json()
+        ).then(data => {
+            if (data.insertedId) {
+                alert('Product added Successfully')
+            }
+        })
+    }
     return (
         <div>
             <div className="flex items-center justify-center p-10 min-h-screen">
@@ -10,7 +30,7 @@ const AddProducts = () => {
                         Add Product
                     </h2>
 
-                    <form className="space-y-5 mt-6">
+                    <form className="space-y-5 mt-6" onSubmit={handleSubmit}>
                         <div className="form-control">
                             <label
                                 className="label font-medium text-[#1E293B]"
